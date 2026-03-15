@@ -125,5 +125,5 @@ if __name__ == "__main__":
         sys.exit(1)
 
     make_questions(json_path, target_dir / "README.md")
-    make_explanations(json_path, target_dir / "Explanation.pdf")
+    make_explanations(json_path, target_dir / "Explaination.pdf")
     sys.stdout.write(f"✅ Xong! Kiểm tra kết quả tại: {target_dir}/\n")

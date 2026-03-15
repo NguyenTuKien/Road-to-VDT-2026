@@ -1,495 +1,506 @@
-## Câu 1: What is Kubernetes?
+## Câu 1: What is Docker?
 
-A. A programming language for developing applications
+A. A Hypervisor
 
-B. A storage management system
+B. An Operating System
 
-C. A tool for managing virtual machines
+C. A Virtual Machine
 
-**\*D. A container orchestration platform**
+**\*D. A Containerization platform**
 
 
-## Câu 2: What is a Pod in Kubernetes?
+## Câu 2: Which of the following is the core component of Docker?
 
-A. A network configuration
+A. Docker CLI
 
-**\*B. A group of one or more containers**
+**\*B. Docker Engine**
 
-C. A storage unit
+C. Docker Server
 
-D. A single container
+D. Docker Hypervisor
 
 
-## Câu 3: Which component of Kubernetes manages the desired state of the cluster?
+## Câu 3: Which command is used to check the version of Docker?
 
-A. kube-apiserver
+A. docker details
 
-**\*B. kube-controller-manager**
+B. docker info
 
-C. etcd
+C. docker version
 
-D. kube-scheduler
+**\*D. docker –version**
 
 
-## Câu 4: What is a Kubernetes Cluster?
+## Câu 4: What is a Docker Container?
 
-**\*A. A group of machines running Kubernetes components**
+A. A network service
 
-B. A single container
+**\*B. A lightweight executable package**
 
-C. A network switch
+C. An Operating System kernel
 
-D. An application repository
+D. A Virtual Machine
 
 
-## Câu 5: What is a Service in Kubernetes?
+## Câu 5: What does the docker ps command do?
 
-A. A tool for managing containers
+A. Starts a Docker container
 
-B. A container registry
+B. Displays Docker images
 
-**\*C. A way to expose Pods to the network**
+C. Displays Docker version
 
-D. A way to manage storage volumes
+**\*D. Displays running containers**
 
 
-## Câu 6: What is a Kubernetes Deployment?
+## Câu 6: Which file defines the instructions to build a Docker image?
 
-**\*A. A set of instructions for application deployment**
+**\*A. Dockerfile**
 
-B. A configuration object for resource limits
+B. requirements.json
 
-C. A Pod replication controller
+C. config.txt
 
-D. A group of containers running together
+D. docker-compose.yml
 
 
-## Câu 7: What is a Node in a Kubernetes Cluster?
+## Câu 7: What is a Docker Image?
 
-**\*A. A worker machine where containers run**
+A. A running container
 
-B. A database server
+**\*B. A snapshot of an application and its dependencies**
 
-C. A networking component
+C. A configuration file
 
-D. A storage device
+D. A virtual hard drive
 
 
-## Câu 8: What is a Namespace in Kubernetes?
+## Câu 8: How do you create a Docker Image?
 
-A. A method for controlling access to resources
+A. docker run
 
-B. A tool for managing logs
+B. docker pull
 
-**\*C. A way to group related objects in a cluster**
+**\*C. docker build**
 
-D. A type of network protocol
+D. docker start
 
 
-## Câu 9: What does a ConfigMap in Kubernetes do?
+## Câu 9: How can you remove a Docker image?
 
-A. Manages network traffic
+A. docker remove
 
-B. Stores large datasets
+B. docker delete
 
-C. Manages application secrets
+C. docker rm
 
-**\*D. Decouples configuration from the application code**
+**\*D. docker rmi**
 
 
-## Câu 10: Which API server endpoint exposes Kubernetes functionality to developers?
+## Câu 10: What is the difference between a Docker Container and a Virtual Machine?
 
-**\*A. kube-apiserver**
+A. Containers are slower than VMs
 
-B. controller-manager
+B. VMs run on hardware, while containers do not
 
-C. kubelet
+**\*C. Containers share the host OS kernel, while VMs have their own kernel**
 
-D. scheduler
+D. Containers are heavier than VMs
 
 
-## Câu 11: What is a ReplicaSet in Kubernetes?
+## Câu 11: Which command creates and starts a new container?
 
-**\*A. A method to ensure a specified number of Pod copies**
+A. docker create
 
-B. A deployment strategy
+B. docker start
 
-C. A network policy manager
+**\*C. docker run**
 
-D. A storage component
+D. docker build
 
 
-## Câu 12: What does the kubectl delete command do?
+## Câu 12: How do you stop a running Docker container?
 
-A. Lists resources
+A. docker pause
 
-**\*B. Deletes a specified resource**
+B. docker terminate
 
-C. Applies a configuration change
+C. docker end
 
-D. Displays resource details
+**\*D. docker stop**
 
 
-## Câu 13: What is a common reason for container startup failures in Kubernetes?
+## Câu 13: What are the key components of Docker architecture?
 
-A. Corrupted images
+A. Docker Manager, Docker Processor, Docker Configurator
 
-B. Network misconfiguration
+B. Docker Master, Docker Node, Docker Registry
 
-C. Insufficient resources
+**\*C. Docker Engine, Docker CLI, Docker Daemon**
+
+D. Docker Kernel, Docker Service, Docker Network
+
+
+## Câu 14: What is the role of the Docker Daemon?
+
+A. It stores operating system data
+
+**\*B. It manages containers, images, and networks**
+
+C. It interacts with the user interface
+
+D. It only handles logs
+
+
+## Câu 15: What is a Docker Registry?
+
+A. A network router
+
+B. A local storage system
+
+C. A virtual machine host
+
+**\*D. A repository for storing and sharing Docker images**
+
+
+## Câu 16: Which Docker service manages updates automatically?
+
+**\*A. Docker Daemon**
+
+B. Docker Compose
+
+C. Docker Engine
+
+D. Docker Plugin
+
+
+## Câu 17: What is a Docker Service?
+
+A. A process that manages logs
+
+B. A database replication tool
+
+C. A notification system
+
+**\*D. A set of containers deployed together**
+
+
+## Câu 18: What command lists all running Docker containers?
+
+A. docker list
+
+B. docker check
+
+**\*C. docker ps**
+
+D. docker stop
+
+
+## Câu 19: Why use Multi-stage builds in Docker?
+
+A. Increase startup time
+
+**\*B. Decrease image size**
+
+C. Use more memory
+
+D. None of the above
+
+
+## Câu 20: Which CLI command shows detailed information about a container?
+
+**\*A. docker inspect**
+
+B. docker show
+
+C. docker details
+
+D. docker info
+
+
+## Câu 21: What is the purpose of the docker exec command?
+
+**\*A. Execute a command inside a running container**
+
+B. Pull a new image
+
+C. Remove a container
+
+D. Start a new registry
+
+
+## Câu 22: Which of the following commands removes a stopped container?
+
+A. docker delete
+
+B. docker stop
+
+C. docker prune
+
+**\*D. docker rm**
+
+
+## Câu 23: How do you tag a Docker image with a new version?
+
+A. docker version
+
+B. docker update
+
+**\*C. docker tag**
+
+D. docker modify
+
+
+## Câu 24: Which of the following is true about Docker Hub?
+
+**\*A. It is a Docker image storage and distribution platform**
+
+B. It is a cloud service for running containers
+
+C. It is only available for Windows
+
+D. It is a tool for managing Docker containers
+
+
+## Câu 25: What is the docker-compose tool used for?
+
+A. Deploying single containers
+
+B. Deleting containers
+
+**\*C. Running multiple containers as a service**
+
+D. Creating local network connections
+
+
+## Câu 26: What is the default network mode in Docker containers?
+
+A. Overlay
+
+B. Static
+
+C. Host
+
+**\*D. Bridge**
+
+
+## Câu 27: What is the purpose of the docker network ls command?
+
+A. Create a new network
+
+**\*B. List existing networks**
+
+C. Share network bandwidth
+
+D. Remove existing networks
+
+
+## Câu 28: What is Docker Compose used for?
+
+**\*A. Managing multi-container applications**
+
+B. Connecting network interfaces
+
+C. Building a single container
+
+D. Automating system tasks
+
+
+## Câu 29: What is the purpose of Docker Networking?
+
+A. To deploy virtual machines
+
+B. To increase system RAM
+
+C. To store application data
+
+**\*D. To connect applications within containers**
+
+
+## Câu 30: How do you bring up a service using Docker Compose?
+
+A. docker-compose install
+
+B. docker run
+
+**\*C. docker-compose up**
+
+D. docker-compose scale
+
+
+## Câu 31: What is Docker Swarm?
+
+A. A logging tool
+
+B. A storage manager
+
+**\*C. An orchestration tool for managing clusters**
+
+D. A backup service
+
+
+## Câu 32: Which of the following is not a valid Docker image format?
+
+**\*A. iso**
+
+B. dockerfile
+
+C. img
+
+D. tar
+
+
+## Câu 33: What is port binding in Docker?
+
+A. Binding environment variables
+
+**\*B. Assigning internal ports to external ones**
+
+C. Binding memory resources
+
+D. Binding IP addresses to containers
+
+
+## Câu 34: What best practice should you follow to secure a Docker environment?
+
+**\*A. Use docker scan for vulnerability testing**
+
+B. Minimize container dependencies
+
+C. Limit privileges with –privileged
+
+D. Run containers as root
+
+
+## Câu 35: What happens if you stop a Docker container?
+
+A. The container is automatically destroyed
+
+**\*B. The container stops running but remains on the system**
+
+C. The container becomes permanently inaccessible
+
+D. It deletes all container data
+
+
+## Câu 36: What is the purpose of a Dockerfile?
+
+A. To create virtual machines
+
+B. To optimize application code
+
+C. To store environment variables
+
+**\*D. To define and build Docker images**
+
+
+## Câu 37: Which command creates a Docker volume?
+
+A. docker storage create
+
+B. docker add volume
+
+**\*C. docker volume create**
+
+D. docker create
+
+
+## Câu 38: What is Docker Content Trust (DCT)?
+
+A. A system performance monitor
+
+B. A mechanism for local image storage
+
+C. A debugging tool
+
+**\*D. A feature that verifies image authenticity**
+
+
+## Câu 39: Which command is used to view logs of a running container?
+
+**\*A. docker logs**
+
+B. docker view
+
+C. docker show logs
+
+D. docker trace
+
+
+## Câu 40: How can you interactively troubleshoot a container?
+
+A. docker attach
+
+**\*B. docker exec**
+
+C. docker debug
+
+D. docker trace
+
+
+## Câu 41: Why is Docker commonly integrated with CI/CD pipelines?
+
+A. Consistent environments across testing and production
+
+B. Easier dependency management
+
+C. Faster build and deployment times
 
 **\*D. All of the mentioned**
 
 
-## Câu 14: What is a Kubernetes Secret?
+## Câu 42: Why is Kubernetes often paired with Docker?
 
-**\*A. A secure storage for sensitive information**
+A. For debugging local machines
 
-B. A load balancer
+B. For virtualizing operating systems
 
-C. A container replica
+**\*C. For orchestrating large-scale container deployments**
 
-D. A tool for deployment
+D. For building individual containers
 
 
-## Câu 15: What is the use of kubectl exec in troubleshooting?
+## Câu 43: Which tool is frequently combined with Docker for CI/CD workflows?
 
-A. Enable auto-scaling
+A. CircleCI
 
-**\*B. Access a running container’s shell to debug issues**
+B. GitLab CI/CD
 
-C. Configure storage manually
+C. Jenkins
 
-D. Restart nodes
+**\*D. All of the mentioned**
 
 
-## Câu 16: What is the role of the Kubernetes API Server?
+## Câu 44: Which Docker command allows you to delete all unused images, containers, and networks?
 
-**\*A. Acting as the main control point for communication in the cluster**
+A. docker remove-all
 
-B. Scheduling and deploying containers
+B. docker delete-all
 
-C. Managing storage volumes
+**\*C. docker prune**
 
-D. Load balancing within pods
+D. docker clean
 
 
-## Câu 17: What is the function of a Kubernetes Ingress?
+## Câu 45: Which command starts services defined in a docker-compose.yml file?
 
-A. Store logs for pods
+**\*A. docker-compose up**
 
-**\*B. Expose services to external users and provide HTTP routing**
+B. docker-compose build
 
-C. Control memory usage across nodes
+C. docker-compose stop
 
-D. Deploy pods across multiple nodes
+D. docker-compose start
 
 
-## Câu 18: What happens when you use the kubectl scale command?
+## Câu 46: Why should Docker images be kept small?
 
-A. Automatically upgrades the cluster nodes
+A. Reduced resource consumption
 
-**\*B. Increases or decreases the number of replicas for a deployment**
+B. Faster startup time
 
-C. Deletes unused services
+C. Easier maintenance and updates
 
-D. Updates Kubernetes API components
-
-
-## Câu 19: What is the purpose of a Kubernetes Network Policy?
-
-A. To set storage limits for containers
-
-B. To allocate CPU resources
-
-**\*C. To control network traffic to and from Pods**
-
-D. To monitor cluster performance
-
-
-## Câu 20: What is a Persistent Volume (PV) in Kubernetes?
-
-A. Temporary storage for Pods
-
-B. A volume specific to a single container
-
-**\*C. A cluster-wide storage resource**
-
-D. A network policy configuration
-
-
-## Câu 21: What is the purpose of Kubernetes Labels?
-
-A. Store environment variables
-
-B. Encrypt container data
-
-C. Define application architecture
-
-**\*D. Group and organize pods and other resources**
-
-
-## Câu 22: How do you check the status of pods in your Kubernetes cluster?
-
-A. kubectl monitor pod
-
-B. kubectl create pod
-
-C. kubectl start pod
-
-**\*D. kubectl get pods**
-
-
-## Câu 23: What is a DaemonSet in Kubernetes?
-
-A. Stores cluster logs
-
-B. Provides database backups
-
-**\*C. Deploys a pod on all nodes in a cluster**
-
-D. Manages service discovery
-
-
-## Câu 24: What does the kubectl describe command do?
-
-**\*A. Provides detailed information about a Kubernetes resource**
-
-B. Creates a new node
-
-C. Deploys applications automatically
-
-D. Deletes a pod
-
-
-## Câu 25: What is a Blue-Green deployment in Kubernetes?
-
-**\*A. A strategy that keeps two environments: current (blue) and new (green)**
-
-B. Deploying to all Pods simultaneously
-
-C. Using multiple replicas of the same Pod
-
-D. Scaling resources up and down automatically
-
-
-## Câu 26: What does a Rolling Update do in Kubernetes?
-
-A. Scales down the cluster
-
-**\*B. Updates Pods incrementally**
-
-C. Deletes all Pods and deploys new ones
-
-D. Deploys only one replica
-
-
-## Câu 27: What is the purpose of the CNI (Container Network Interface) plugin in Kubernetes?
-
-A. Deploying configuration files
-
-B. Managing storage operations
-
-**\*C. Connecting containers to a network**
-
-D. Handling application secrets
-
-
-## Câu 28: Which command is used to create a resource in Kubernetes?
-
-A. kubectl get
-
-**\*B. kubectl create**
-
-C. kubectl apply
-
-D. kubectl start
-
-
-## Câu 29: What does the term “k8s” stand for?
-
-A. Kubernetes clusters
-
-B. Kubernetes orchestration
-
-**\*C. Kubernetes (with 8 letters removed)**
-
-D. Kubernetes container system
-
-
-## Câu 30: What is a Local Volume in Kubernetes?
-
-**\*A. A volume stored on the same node as the Pod**
-
-B. A database storage solution
-
-C. An external network volume
-
-D. Remote cloud storage
-
-
-## Câu 31: What is the purpose of Volume Mounts in Kubernetes?
-
-A. Connecting database clusters
-
-B. Managing Pod metadata
-
-**\*C. Linking storage resources to Pods**
-
-D. Handling network routes
-
-
-## Câu 32: Why do organizations prefer Canary Deployments?
-
-A. Avoiding all network latency issues
-
-B. Strictly random updates
-
-C. Complete system resets
-
-**\*D. Faster deployment with fewer interruptions**
-
-
-## Câu 33: What are Helm Charts in Kubernetes?
-
-**\*A. A package manager for Kubernetes applications**
-
-B. Simple storage interfaces
-
-C. An API endpoint
-
-D. Networking protocols
-
-
-## Câu 34: What is Cluster Autoscaler in Kubernetes?
-
-A. Orchestrating network updates
-
-B. A tool for managing internal DNS
-
-**\*C. Automatically adjusting the number of nodes in a cluster**
-
-D. Managing Kubernetes logs
-
-
-## Câu 35: Why is scaling important in a Kubernetes environment?
-
-A. Restricting network access
-
-B. Complete node shutdown
-
-**\*C. Optimizing resource usage and ensuring application availability**
-
-D. Faster startup times
-
-
-## Câu 36: What is Prometheus in Kubernetes?
-
-A. A network routing controller
-
-B. A scheduling component
-
-C. A tool for service discovery
-
-**\*D. A monitoring system and time-series database**
-
-
-## Câu 37: What are Kubernetes Events?
-
-A. Temporary containers
-
-B. Inactive storage nodes
-
-**\*C. Logs for cluster state changes and errors**
-
-D. API service failures
-
-
-## Câu 38: What is a Kubernetes Pod Security Policy (PSP)?
-
-A. A method for storing application logs
-
-B. A networking configuration tool
-
-C. A built-in scheduler
-
-**\*D. A deprecated feature to control security constraints for Pods**
-
-
-## Câu 39: What is Kubernetes Audit Logging?
-
-A. A scheduler for container startup
-
-**\*B. Logs that record all interactions with the Kubernetes API**
-
-C. A tool for data visualization
-
-D. A tool to optimize networking interfaces
-
-
-## Câu 40: What is the purpose of Kubernetes CronJobs?
-
-**\*A. Automating scheduled tasks in a cluster**
-
-B. Deploying containers manually
-
-C. Managing network routing
-
-D. For scaling nodes dynamically
-
-
-## Câu 41: What are Kubernetes Controllers?
-
-A. A manual scheduling service
-
-B. A networking load balancer
-
-**\*C. Components that manage and automate the lifecycle of resources**
-
-D. Tools for configuring local storage
-
-
-## Câu 42: What are Kubernetes Operators?
-
-A. A scaling component
-
-B. A logging service
-
-**\*C. Custom controllers that automate application management**
-
-D. Manual deployment tools
-
-
-## Câu 43: What are Taints and Tolerations in Kubernetes?
-
-A. Database storage optimization
-
-**\*B. Control node affinity and pod placement**
-
-C. Logging interface
-
-D. Network configuration settings
-
-
-## Câu 44: What are Kubernetes Annotations?
-
-A. For managing storage replicas
-
-B. A networking configuration tool
-
-C. A logging and debugging service
-
-**\*D. Key-value pairs attached to Kubernetes resources for metadata**
-
-
-## Câu 45: What is a StatefulSet in Kubernetes?
-
-A. A type of pod
-
-B. A way to expose services
-
-**\*C. A controller for managing stateful applications**
-
-D. A resource for managing network policies
+**\*D. All of the mentioned**
 
 
