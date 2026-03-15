@@ -1,0 +1,7 @@
+.venv
+.md
+.json   
+.web
+**/__init__.py
+**/__pycache__/
+**/*.pyc
