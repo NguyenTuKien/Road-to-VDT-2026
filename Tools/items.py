@@ -3,10 +3,10 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/items.html
 
-import tools
+import Tools
 
 
-class ToolsItem(tools.Item):
+class ToolsItem(Tools.Item):
     # define the fields for your item here like:
     # name = tools.Field()
     pass

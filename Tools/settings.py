@@ -7,10 +7,10 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "tools"
+BOT_NAME = "Tools"
 
-SPIDER_MODULES = ["tools.spiders"]
-NEWSPIDER_MODULE = "tools.spiders"
+SPIDER_MODULES = ["Tools.spiders"]
+NEWSPIDER_MODULE = "Tools.spiders"
 
 ADDONS = {}
 
@@ -41,13 +41,13 @@ DOWNLOAD_DELAY = 1
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "tools.middlewares.ToolsSpiderMiddleware": 543,
+#    "Tools.middlewares.ToolsSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "mcq.middlewares.McqDownloaderMiddleware": 543,
+#    "Tools.middlewares.ToolsDownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions

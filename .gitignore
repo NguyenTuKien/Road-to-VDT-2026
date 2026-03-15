@@ -1,7 +1,4 @@
-.venv
-.md
-.json   
-.web
+venv
 **/__init__.py
 **/__pycache__/
 **/*.pyc

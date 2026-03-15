@@ -6,7 +6,7 @@ from scrapy.selector import Selector
 class SanfoundrySpider(scrapy.Spider):
     name = "sanfoundry"
     allowed_domains = ["sanfoundry.com"]
-    start_urls = ["http://127.0.0.1:5500/.web/kubernetes_sanfoundry.html"]
+    start_urls = ["http://127.0.0.1:5500/Kubernetes_Sanfoundry/index.html"]
 
     custom_settings = {
         "ROBOTSTXT_OBEY": False,
