@@ -1,33 +1,39 @@
 import re
-import tools
+import scrapy
+from scrapy.selector import Selector
 
-
-class SanfoundrySpider(tools.Spider):
+# ĐÃ SỬA: Phải kế thừa từ scrapy.Spider
+class SanfoundrySpider(scrapy.Spider):
     name = "sanfoundry"
     allowed_domains = ["sanfoundry.com"]
-    start_urls = ["https://www.sanfoundry.com/kubernetes-mcq-multiple-choice-questions/"]
+    start_urls = ["http://127.0.0.1:5500/.web/kubernetes_sanfoundry.html"]
 
     custom_settings = {
         "ROBOTSTXT_OBEY": False,
-        "USER_AGENT": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0 Safari/537.36",
-        "DEFAULT_REQUEST_HEADERS": {
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language": "en",
-        },
-        "DOWNLOAD_DELAY": 2,
+        "USER_AGENT": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+        "DOWNLOAD_DELAY": 3,
         "CONCURRENT_REQUESTS_PER_DOMAIN": 1,
     }
 
     def parse(self, response):
-        # mỗi câu hỏi thường nằm trong 1 <p> trong entry-content
-        for p in response.css("div.entry-content p"):
-            first_text = p.xpath("normalize-space(text()[1])").get()
-            if not first_text or not re.match(r"^\d+\.", first_text):
+        # Lặp qua tất cả các thẻ <p>
+        for p in response.css("div.entry-content > p"):
+            p_html = p.get()
+            if not p_html:
                 continue
 
-            # lấy lines trong <p> (có cả <br>)
-            lines = p.xpath(".//text()[normalize-space()]").getall()
-            lines = [re.sub(r"\s+", " ", x).strip() for x in lines if x.strip()]
+            # Đổi thẻ <br> thành dấu xuống dòng (\n) để giữ nguyên cấu trúc các đáp án
+            p_html = re.sub(r'<br\s*/?>', '\n', p_html, flags=re.IGNORECASE)
+
+            # Rút trích text tinh khiết, xuyên qua các thẻ <strong>, <code>
+            clean_text = Selector(text=p_html).xpath('string(.)').get()
+            
+            lines = [x.strip() for x in clean_text.split('\n') if x.strip()]
+            if not lines:
+                continue
+
+            if not re.match(r"^\d+\.", lines[0]):
+                continue
 
             q_no = None
             question = None
@@ -41,50 +47,44 @@ class SanfoundrySpider(tools.Spider):
                     if m:
                         q_no = int(m.group(1))
                         question_parts.append(m.group(2).strip())
-                elif re.match(r"^[a-dA-D]\)", line):
+                elif re.match(r"^[a-dA-D][\)\.]", line):
                     found_first_option = True
                     key = line[0].lower()
-                    val = line[3:].strip()
+                    val = re.sub(r"^[a-dA-D][\)\.]\s*", "", line).strip()
                     options[key] = val
                 elif not found_first_option and question_parts:
-                    # Phần tiếp theo của câu hỏi (sau strong tag, etc.)
                     question_parts.append(line)
             
-            # Ghép tất cả các phần của câu hỏi lại
             if question_parts:
                 question = " ".join(question_parts).strip()
 
-            # lấy id của nút View Answer
+            # --- Lấy Đáp Án và Giải Thích ---
             btn_id = p.css("span.collapseomatic::attr(id)").get()
-
             answer = None
             explanation = None
 
             if btn_id:
                 target_id = f"target-{btn_id}"
-
-                # tìm div đáp án bằng id (ở cùng page)
                 ans_texts = response.css(f"#{target_id} ::text").getall()
-                ans_texts = [re.sub(r"\s+", " ", t).strip() for t in ans_texts if t.strip()]
-                ans_block = " ".join(ans_texts)
+                ans_block = " ".join([re.sub(r"\s+", " ", t).strip() for t in ans_texts if t.strip()])
 
-                # parse "Answer: d" và "Explanation: ..."
-                m_ans = re.search(r"Answer:\s*([a-dA-D])\b", ans_block)
+                m_ans = re.search(r"Answer:\s*([a-dA-D])\b", ans_block, re.IGNORECASE)
                 if m_ans:
                     answer = m_ans.group(1).lower()
 
-                m_exp = re.search(r"Explanation:\s*(.*)$", ans_block)
+                m_exp = re.search(r"Explanation:\s*(.*)$", ans_block, re.IGNORECASE)
                 if m_exp:
                     explanation = m_exp.group(1).strip()
 
-            yield {
-                "no": q_no,
-                "question": question,
-                "a": options.get("a"),
-                "b": options.get("b"),
-                "c": options.get("c"),
-                "d": options.get("d"),
-                "answer": answer,
-                "explanation": explanation,
-                "source": response.url,
-            }
+            if q_no and question:
+                yield {
+                    "no": q_no,
+                    "question": question,
+                    "a": options.get("a", ""),
+                    "b": options.get("b", ""),
+                    "c": options.get("c", ""),
+                    "d": options.get("d", ""),
+                    "answer": answer,
+                    "explanation": explanation,
+                    "source": response.url,
+                }

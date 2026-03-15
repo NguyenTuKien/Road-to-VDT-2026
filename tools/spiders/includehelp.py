@@ -1,7 +1,7 @@
-import tools
+import scrapy
 import re
 
-class IncludehelpSpider(tools.Spider):
+class IncludehelpSpider(scrapy.Spider):
     name = 'includehelp'
     allowed_domains = ['includehelp.com']
     start_urls = ['https://www.includehelp.com/mcq/docker-mcqs.aspx']
